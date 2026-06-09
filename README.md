@@ -51,18 +51,41 @@ trading_bot/
 
 ## Setup — Run Locally
 
-### Step 1 — Get Demo API Keys
+### Step 1 — Install Python (if not installed)
 
-1. Go to **demo.binance.com** and log in (Google login works)
-2. Navigate to: **Profile → API Management**
-3. Click **"Create API"**, enter label: `trading_bot`
-4. Copy your **API Key** and **Secret Key** (Secret shown only once!)
+Download and install Python from: https://python.org/downloads
+
+> **Important (Windows):** During installation, tick **"Add Python to PATH"** checkbox before clicking Install Now.
+
+Verify installation:
+```bash
+py --version
+```
+
+---
+
+### Step 2 — Install Git (if not installed)
+
+Download from: https://git-scm.com/downloads  
+After install, verify:
+```bash
+git --version
+```
+
+---
+
+### Step 3 — Get Demo API Keys
+
+1. Go to **demo.binance.com** and log in (Google login works — no KYC needed)
+2. Navigate to: **Profile icon → API Management**
+3. Click **"Create API"**, enter label: `trading_bot`, click Create
+4. Copy your **API Key** and **Secret Key** (Secret shown only once — save it!)
 
 > **Note:** These are Demo Trading keys — no real money is used.
 
 ---
 
-### Step 2 — Clone the Repository
+### Step 4 — Clone the Repository
 
 ```bash
 git clone https://github.com/MANEESHA-KONDAPUREDDY/trading-bot.git
@@ -71,21 +94,25 @@ cd trading-bot
 
 ---
 
-### Step 3 — Create Virtual Environment
+### Step 5 — Create Virtual Environment
 
 ```bash
 # Windows
 py -m venv venv
 venv\Scripts\activate
+```
 
+```bash
 # Mac/Linux
 python3 -m venv venv
 source venv/bin/activate
 ```
 
+> You should see `(venv)` appear at the start of your terminal line.
+
 ---
 
-### Step 4 — Install Dependencies
+### Step 6 — Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -93,9 +120,7 @@ pip install -r requirements.txt
 
 ---
 
-### Step 5 — Configure API Keys
-
-Copy the example env file and add your keys:
+### Step 7 — Configure API Keys
 
 ```bash
 # Windows
@@ -105,18 +130,17 @@ copy .env.example .env
 cp .env.example .env
 ```
 
-Edit `.env` file:
+Open `.env` file and add your keys:
 ```
 BINANCE_API_KEY=your_actual_api_key_here
 BINANCE_SECRET_KEY=your_actual_secret_key_here
 ```
 
-> Keys must be from **demo.binance.com → API Management**  
-> Do NOT add any extra text — just the key itself.
+> Paste only the key — no spaces, no extra text.
 
 ---
 
-### Step 6 — Run the Web UI
+### Step 8 — Run the Web UI
 
 ```bash
 python app.py
@@ -126,7 +150,7 @@ Open browser: **http://localhost:5000**
 
 ---
 
-### Step 7 — Run via CLI
+### Step 9 — Run via CLI
 
 **Market Order:**
 ```bash
